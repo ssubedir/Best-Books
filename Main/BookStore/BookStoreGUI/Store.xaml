@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="BookStoreGUI.Store"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BookStoreGUI"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="900" Width="1220">
+
+    <StackPanel Background="#4B618D" x:Name="catalog_Shop">
+
+        <StackPanel Orientation="Horizontal">
+            <materialDesign:PackIcon Kind="Shopping" Foreground="White" Height="90" Width="110" Margin="10,10,0,0"/>
+            <Rectangle Width="20">
+
+            </Rectangle>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                <TextBox x:Name="searchTxb" Margin="100,0" materialDesign:HintAssist.Hint="SEARCH" Foreground="White" TextChanged="searchTxb_TextChanged" Width="600" FontSize="20" Height="53"/>
+            </StackPanel>
+            <Rectangle Width="20">
+
+            </Rectangle>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="100, 0" VerticalAlignment="Center">
+                <materialDesign:PackIcon Kind="Cart" Foreground="White" Width="25" Height="25" VerticalAlignment="Center" Margin="5"/>
+                <TextBlock x:Name="cart_val" Foreground="White" FontSize="18" Text="0" VerticalAlignment="Center"/>
+            </StackPanel>
+
+        </StackPanel>
+
+        <ComboBox  ItemsSource="{Binding}"  Width="600"  Height="34" x:Name="categoriesComboBox"
+		    IsSynchronizedWithCurrentItem="True"
+		    DisplayMemberPath="Name" BorderBrush="#4B618D" VerticalAlignment="Center" Foreground="White" FontSize="18" FontWeight="Bold" Margin="249,0,371,0" />
+
+        <StackPanel Orientation="Vertical">
+            <DataGrid Grid.Column="1" MouseDoubleClick="viewBookEvent" AutoGenerateColumns="False"   Height="616"  Width="1142" 
+		ItemsSource="{Binding drCat_Book}"
+		x:Name="ProductsDataGrid" ScrollViewer.CanContentScroll="True" 
+      ScrollViewer.VerticalScrollBarVisibility="Auto"
+      ScrollViewer.HorizontalScrollBarVisibility="Auto" RowDetailsVisibilityMode="VisibleWhenSelected"
+		 HorizontalAlignment="Left"
+		SelectionMode="Single" CanUserAddRows="False" CanUserDeleteRows="False" CanUserSortColumns="true" IsReadOnly="true" Grid.ColumnSpan="2" Margin="37,0,0,0">
+                <DataGrid.Columns>
+                    <materialDesign:MaterialDataGridTextColumn
+			x:Name="titleColumn" Binding="{Binding Title}"
+			Header="Title" Width="330*" />
+                    <materialDesign:MaterialDataGridTextColumn
+			x:Name="authorColumn" Binding="{Binding Author}"
+			Header="Author" Width="230*" />
+                    <materialDesign:MaterialDataGridTextColumn
+			x:Name="priceColumn" Binding="{Binding Price, StringFormat=C}"
+			Header="Price" Width="100"/>
+                    <materialDesign:MaterialDataGridTextColumn
+			x:Name="isbnCOl" Binding="{Binding ISBN}"
+			Header="ISBN" Width="0"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+
+    </StackPanel>
+
+
+
+</UserControl>

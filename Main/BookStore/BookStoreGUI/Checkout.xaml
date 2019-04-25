@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="BookStoreGUI.Checkout"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BookStoreGUI"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="900" Width="1220">
+    <Grid Background="#4B618D" x:Name="user_Check">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="400"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="White">
+
+
+        </Grid>
+
+        <Grid Grid.Row="1" Background="#FF445E8F">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="24"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="1" x:Name="lbl_formName"  Content="Shopping Cart" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Foreground="#DDFFFFFF" FontFamily="Arial Black"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Background="White" Grid.RowSpan="3" Margin="0,0,0,372">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="360"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="4" x:Name="btn_checkout" Height="50" Background="#4B618D" BorderBrush="#4B618D" Width="200" HorizontalAlignment="Right" Click="button1_Click_1" Margin="0,26,-338,25">
+                <Grid Width="150">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <materialDesign:PackIcon Kind="TicketConfirmation" VerticalAlignment="Center" Height="30"  Width="30" Grid.RowSpan="2"/>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Confirm" FontFamily="Champagne &amp; Limousines" Margin="49,7,49,6" Grid.RowSpan="2"/>
+                </Grid>
+            </Button>
+            <Label x:Name="label" Content="Checkout" Grid.Column="1" HorizontalAlignment="Left" Margin="37,10,0,0" VerticalAlignment="Top" Height="66" Width="139" FontWeight="Bold" FontSize="24"/>
+            <Label x:Name="label_Copy" Content="Total: $0.00" Grid.Column="1" HorizontalAlignment="Left" Margin="314,10,0,0" VerticalAlignment="Top" Height="66" Width="248" FontWeight="Bold" FontSize="24" Grid.ColumnSpan="2"/>
+
+        </Grid>
+
+        <Grid Grid.Row="4">
+
+
+            <Grid HorizontalAlignment="Left" Height="372" Margin="221,74,0,-45" VerticalAlignment="Top" Width="825">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="103*"/>
+                    <RowDefinition Height="99*"/>
+                    <RowDefinition Height="98*"/>
+                    <RowDefinition Height="72*"/>
+                </Grid.RowDefinitions>
+                <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="38" Margin="38,43,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Background="#FFFBFAFA" BorderThickness="2" Foreground="#4B618D"/>
+                <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="38" Margin="38,45,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Background="#FFFBFAFA" BorderThickness="2" Foreground="#4B618D"/>
+                <Label x:Name="label1" Content="Cardholder name" HorizontalAlignment="Left" Margin="38,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="203" FontSize="18" FontFamily="Tahoma" Height="32"/>
+                <Label x:Name="label1_Copy" Content="Cardholder number" HorizontalAlignment="Left" Margin="38,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="203" FontSize="18" FontFamily="Tahoma" Height="32"/>
+                <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="38" Margin="410,43,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="59" Background="#FFFBFAFA" BorderThickness="2" Foreground="#4B618D"/>
+                <Label x:Name="label1_Copy1" Content="Expiration Date" HorizontalAlignment="Left" Margin="410,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="203" FontSize="18" FontFamily="Tahoma" Height="32"/>
+                <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="38" Margin="488,43,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="59" Background="#FFFBFAFA" BorderThickness="2" Foreground="#4B618D"/>
+                <TextBox x:Name="textBox_Copy3" HorizontalAlignment="Left" Height="38" Margin="410,45,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="59" Background="#FFFBFAFA" BorderThickness="2" Foreground="#4B618D"/>
+                <TextBox x:Name="textBox_Copy4" HorizontalAlignment="Left" Height="38" Margin="474,45,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="59" Background="#FFFBFAFA" BorderThickness="2" Foreground="#4B618D"/>
+                <TextBox x:Name="textBox_Copy5" HorizontalAlignment="Left" Height="38" Margin="538,45,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="59" Background="#FFFBFAFA" BorderThickness="2" Foreground="#4B618D"/>
+                <Label x:Name="label1_Copy2" Content="CVC Code" HorizontalAlignment="Left" Margin="410,8,0,0" Grid.Row="2" VerticalAlignment="Top" Width="203" FontSize="18" FontFamily="Tahoma" Height="32"/>
+                <TextBox x:Name="textBox_Copy6" HorizontalAlignment="Left" Height="38" Margin="410,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" Background="#FFFBFAFA" BorderThickness="2" Foreground="#4B618D" Grid.Row="3"/>
+                <Button x:Name="button" Content="Add Coupon" HorizontalAlignment="Left" Margin="621,39,0,0" Grid.Row="3" VerticalAlignment="Top" Width="115" Height="23" Click="button_Click"/>
+                <Label x:Name="label1_Copy3" Content="Coupon Code" HorizontalAlignment="Left" Margin="410,0,0,0" Grid.Row="3" VerticalAlignment="Top" Width="203" FontSize="18" FontFamily="Tahoma" Height="32"/>
+            </Grid>
+
+
+
+        </Grid>
+
+        <Grid Grid.Row="5" Background="White" Margin="0,108,0,-139">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="360"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" x:Name="btn_checkout_Copy" Height="50" Background="#4B618D" BorderBrush="#4B618D" Width="200" HorizontalAlignment="Right"  Margin="0,32,0,10" Click="btn_checkout_Copy_Click">
+                <Grid Width="150">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <materialDesign:PackIcon Kind="Cancel" VerticalAlignment="Center" Height="30"  Width="30" Grid.RowSpan="2"/>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Cancel" FontFamily="Champagne &amp; Limousines" Margin="49,7,49,6" Grid.RowSpan="2"/>
+                </Grid>
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

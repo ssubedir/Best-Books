@@ -1,0 +1,18 @@
+﻿<Window x:Class="BookStoreGUI.WelcomePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookStoreGUI"
+        mc:Ignorable="d"
+        Title="WelcomePage" Height="250" Width="300">
+    <Grid Margin="0,0,0,46">
+        <Image Source="img/welcome.png" Margin="0,26,0,100"/>
+        <Grid Height="100" Margin="56,128,56,-55">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"    FontFamily="Times New Roman Italic"
+            FontSize="24"  Foreground="DarkBlue" Text="To Our Bookstore," Margin="0,-35,-9,103"/>
+            <TextBlock Name="Username" FontFamily="Times New Roman Italic" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Foreground="DarkBlue"  FontSize="24" IsEnabled="False"/>
+        </Grid>
+    </Grid>
+</Window>
